@@ -52,7 +52,7 @@ def contact():
     if form.validate_on_submit():
         # Process the form data and send email
         msg = Message(subject=form.subject.data,
-                      sender=app.config['MAIL_USERNAME'],
+                      sender=application.config['MAIL_USERNAME'],
                       recipients=['cameronchafin.esl@gmail.com'])
         msg.body = f"From: {form.name.data}\nEmail: {form.email.data}\n\n{form.message.data}"
         mail.send(msg)
