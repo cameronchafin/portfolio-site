@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+
+<!-- Jumbotron -->
+<div class="container-fluid text-light p-5 jumbotron"
+style="background-image: url({{ url_for('static', filename='img/bg/mail-bg.jpg') }})">
+    <div class="jumbo-overlay"></div>
+    <div class="container p-5">
+      <div class="jumbo-title text-center">
+        <h1 class="big-heading">Contact Me</h1>
+        <p class="subheading">I'd love to hear from you.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Form -->
+<div class="container my-5">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="container">
+        <div class="alert alert-success">
+            {{ messages[0] }}
+        </div>
+    </div>
+    {% endif %}
+    {% endwith %}
+    <h2>Get in touch!</h2>
+    <p>
+        Fill out the form below to send me a message and I'll get back to you as soon as I can.
+    </p>
+    <form method="POST" action="{{ url_for('contact') }}">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.name.label }} {{ form.name(class_='form-control', required='required') }}
+        </div>
+        <div class="form-group">
+            {{ form.email.label }} {{ form.email(class_='form-control', required='required') }}
+        </div>
+        <div class="form-group">
+            {{ form.subject.label }} {{ form.subject(class_='form-control', required='required') }}
+        </div>
+        <div class="form-group">
+            {{ form.message.label }} {{ form.message(class_='form-control', required='required') }}
+        </div>
+        <button type="submit" class="btn custom" style="margin-top: 10px;"><i class="fas fa-paper-plane"></i> Submit</button>
+    </form>
+</div>
+
+{% endblock %}

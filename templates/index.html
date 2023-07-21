@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<!-- Banner -->
+<div class="container-fluid text-light p-5 jumbotron"
+style="background-image: url({{ url_for('static', filename='img/bg/home-bg.jpg') }})">
+    <div class="jumbo-overlay"></div>
+    <div class="container p-5">
+      <div class="row align-items-start">
+          <div class="jumbo-title text-center">
+            <h1 class="big-heading ">I'm Cameron.</h1>
+            <p class="subheading">A CS student and developer.</p>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!-- Pages -->
+<div class="container my-5">
+    <div class="feature-title text-center">
+        <h2 class="medium-heading">Welcome to my portfolio.</h2>
+    </div>
+    <div class="row my-5">
+        <div class="col-lg-4 feature-box text-center my-5">
+            <i class="fa-solid fa-mug-hot fa-3x feature-icon"></i>
+            <h3 class="medium-heading"><a href="{{ url_for('about') }}">About Me</a></h3>
+            <p class="subheading">Get to know me.</p>
+        </div>
+        <div class="col-lg-4 feature-box text-center my-5">
+            <i class="fas fa-laptop-code fa-3x feature-icon"></i>
+            <h3 class="medium-heading"><a href="{{ url_for('projects') }}">Projects</a></h3>
+            <p class="subheading">What I'm working on.</p>
+        </div>
+        <div class="col-lg-4 feature-box text-center my-5">
+            <i class="fa-regular fa-envelope fa-3x feature-icon"></i>
+            <h3 class="medium-heading"><a href="{{ url_for('contact') }}">Contact</a></h3>
+            <p class="subheading">Say hello.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Call to action -->
+<div class="dark container-fluid bg-dark text-light p-5">
+    <div class="container cta text-center">
+        <h2 class="medium-heading">Check out my resume!</h2>
+        <a type="button" class="cta-btn btn custom btn-light btn-lg" href="{{ url_for('resume') }}">
+            <i class="fa-regular fa-file-lines"></i> Resume</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,208 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #fafafa;
+    color: #212529;
+}
+
+a {
+    color: #212529;
+    text-decoration: none;
+}
+
+a.muted {
+    color: #6c757d;
+}
+
+a:hover {
+    color: #eb5e28;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+hr {
+    border-color: #eee;
+    border-style: none;
+    border-top-style: dotted;
+    border-width: 8px;
+    width: 15%;
+    margin: 30px auto;
+}
+
+.dark {
+    background-color: #033242;
+    color: #fafafa;
+}
+
+#contact-message {
+    height: 210px;
+}
+
+.feature-icon {
+    padding-bottom: 20px;
+    color: #eb5e28;
+}
+
+/* Headings */
+
+.big-heading {
+    font-size: 5rem;
+    line-height: 1.5;
+}
+
+.medium-heading {
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+
+.small-heading {
+    font-size: 1.7rem;
+    line-height: 1.5;
+}
+
+.subheading {
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+
+.custom {
+    color: #fff;
+    background-color: #eb5e28;
+    border-color: #eb5e28;
+    font-weight: 600;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom:hover, .custom:focus {
+    color: #fff;
+    background-color: #ae471e;
+    border-color: #eb5e28;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom:active {
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline {
+    color: #eb5e28;
+    background-color: transparent;
+    background-image: none;
+    border-color: #eb5e28;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline:hover, .custom-outline:focus {
+    color: #fff;
+    background-color: #ae471e;
+    border-color: #eb5e28;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline:active {
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+/* Navbar */
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: #eb5e28;
+}
+
+.button {
+    color: #eb5e28;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    color: #eb5e28;
+}
+
+/* Jumbotron */
+
+.jumbotron {
+    height: 400px;
+    position: relative;
+    background: no-repeat center center;
+    background-color: #ccf2f4;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.jumbo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: 0.5;
+}
+
+.jumbo-title {
+    position: relative;
+    color: #fafafa;
+}
+
+.jumbo-subheader {
+    font-size: 1.1rem;
+}
+
+
+/* About */
+
+.profile-pic {
+
+    width: 180px;
+    border-radius: 100%;
+    padding: 20px 0;
+}
+
+.media-about {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.media-img {
+    width: 140px;
+    border-radius: 100%;
+}
+
+/* Projects */
+
+.btn-proj {
+     margin-right: 5px;
+}
+
+/* Footer */
+
+footer {
+    padding: 40px 0 10px;
+    margin-top: 0;
+}
+
+.footer-icon:hover {
+    color: #eb5e28;
+}
+
+.copyright {
+    font-size: 0.8rem;
+}

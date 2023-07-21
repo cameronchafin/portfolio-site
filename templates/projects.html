@@ -1,0 +1,395 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Projects
+{% endblock %}
+
+{% block content %}
+
+<!-- Banner -->
+<div class="container-fluid text-light p-5 jumbotron"
+style="background-image: url({{ url_for('static', filename='img/bg/projects-bg.jpg') }})">
+    <div class="jumbo-overlay"></div>
+    <div class="container p-5">
+      <div class="jumbo-title text-center">
+        <h1 class="big-heading">My Projects</h1>
+        <p class="subheading">What I've been working on.</p>
+      </div>
+    </div>
+</div>
+
+<!-- Cards -->
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-2 align-items-center">
+
+        <!-- Halma -->
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='img/projects/halma.png') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Halma Game</h5>
+                    <p class="card-text">Python implementation of the board game Halma featuring AI implemented with minimax
+                        algorithm and alpha beta pruning.</p>
+                    <!-- Modal trigger button -->
+                    <button type="button" class="btn custom btn-proj" data-bs-toggle="modal" data-bs-target="#halmaModal">
+                        More Info
+                    </button>
+                    <a class="btn custom-outline btn-proj" href="https://github.com/cameronchafin/HalmaGame"
+                       target="_blank">
+                        <i class="fas fa-code-branch"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vocabulary Worksheet Generator -->
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='img/projects/worksheet.png') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vocabulary Worksheet Generator</h5>
+                    <p class="card-text">Utilizing the OpenAI API, this application generates a vocabulary worksheet for
+                        ESL/English teachers based on user input.</p>
+                    <button type="button" class="btn custom btn-proj" data-bs-toggle="modal" data-bs-target="#worksheetModal">
+                        More Info
+                    </button>
+                    <a class="btn custom-outline btn-proj" href="https://github.com/samantha-jarrah/Hackathon-Spring-2023"
+                       target="_blank">
+                        <i class="fas fa-code-branch"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Site -->
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='img/projects/portfolio.png') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Portfolio Website</h5>
+                    <p class="card-text">Personal portfolio website built using a Python and Flask backend
+                    and a responsive Bootstrap CSS front end, deployed on AWS.</p>
+                    <button type="button" class="btn custom btn-proj" data-bs-toggle="modal" data-bs-target="#portfolioModal">
+                        More Info
+                    </button>
+                    <a class="btn custom-outline btn-proj" href="https://github.com/samantha-jarrah/Hackathon-Spring-2023"
+                       target="_blank">
+                        <i class="fas fa-code-branch"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music and Mental Health -->
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='img/projects/music.png') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Music and Mental Health</h5>
+                    <p class="card-text">Data analysis which aims to identify the correlations between an individual's
+                    music tastes, listening habits, and self reported mental health.</p>
+                    <button type="button" class="btn custom btn-proj" data-bs-toggle="modal" data-bs-target="#musicModal">
+                        More Info
+                    </button>
+                    <a class="btn custom-outline btn-proj" href="https://github.com/cameronchafin/chum_bucket_supreme/tree/main"
+                       target="_blank">
+                        <i class="fas fa-code-branch"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- Halma Modal -->
+        <div class="modal fade" id="halmaModal" tabindex="-1" aria-labelledby="halmaModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="halmaModalLabel">Halma Game</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h5>Halma Strategy Board Game with AI</h5>
+                <p>
+                    <ul>
+                        <li>Python</li>
+                        <li>Pygame Library</li>
+                        <li>Git, Github</li>
+                    </ul>
+                </p>
+                <p>
+                    This is a Python implementation of the board game Halma, using the Pygame library for the graphical
+                    user interface. Halma is a two-player strategy board game invented in the 19th century. This version
+                    of the game is played on an 8x8 square board between a player and the computer. Similar to the game
+                    Chinese Checkers, gameplay involves players taking turns moving their pieces from their starting
+                    corner of the board into the opposite corner before their opponent.
+                </p>
+                <p>
+                    I decided to build this project after finishing my second quarter as a CS student at Oregon State
+                    University. My motivation for the project was to apply some of the heavy concepts I've learned so
+                    far in my coursework towards a tangible working product. Working on this game pushed me to get my
+                    hands dirty with larger scale Object-Oriented Programming, recursion, modules, and thorough
+                    documentation as well as the opportunity to learn more about AI.
+                </p>
+                <p>
+                    While I ran into many challenges while working on this project, the two biggest ones were move
+                    validation and evaluating states of the game board to enable proper decision-making by the AI.
+                </p>
+                    <ul>
+                        <li>
+                            Enforcing proper move validation was the biggest hurdle I had to overcome during this build.
+                            In Halma, players may move a piece to any empty adjacent square in any of the eight
+                            directions surrounding their piece. If such a move is made, their turn ends. Players may
+                            also make a jump over any adjacent piece of any color into an empty space on the other side
+                            of that piece. Multiple jumps can be chained together in a single move as long as each jump
+                            is over a different piece and into an unvisited space. The solution came down to building a
+                            list of all valid moves into adjacent spaces with a helper function and adding all valid
+                            jumps to that list using a separate recursive function.
+                        </li>
+                        <br>
+                        <li>
+                            The other main challenge I faced was writing an evaluation function that properly informed
+                            the AI's movements based on the current state of the game board. While I tried out different
+                            factors such as central control of the board, and blocking opposing pieces, I eventually
+                            settled on evaluation based on three factors:
+                            <ol>
+                                <br>
+                                <li>Distance between each player's pieces and the opposing starting zone</li>
+                                <li>Number of pieces in the opponent's starting zone</li>
+                                <li>Penalty for pieces remaining in their own starting zone</li>
+                            </ol>
+                            <br>
+                            The three factors are determined as numeric values and totaled as a floating-point number
+                            representing the evaluation score. The final stage of development for the project as a
+                            whole came down to playing test games against the AI and adjusting the weight of these
+                            three factors to facilitate the strongest decision-making by the AI.
+                        </li>
+                    </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn custom" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vocabulary Worksheet Generator Modal -->
+        <div class="modal fade" id="worksheetModal" tabindex="-1" aria-labelledby="worksheetModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="worksheetModalLabel">Vocabulary Worksheet Generator</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h5>Vocabulary Worksheet Generator: Spring 2023 Hackathon Project</h5>
+                <p>
+                    <ul>
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>Bootstrap</li>
+                        <li>OpenAI API</li>
+                        <li>Heroku</li>
+                    </ul>
+                </p>
+                <p>
+                    This was a project I did as a team in the Spring 2023 Beaverhacks Hackaton at Oregon State
+                    University. The theme of the hackathon was leveraging AI. My team and I decided to build a tool for
+                    English teachers, like myself, to create a tool that could provide real-world value.
+                    Utilizing the OpenAI API, our app generates vocabulary worksheets for teachers based on unique user
+                    input.
+                </p>
+                <p>
+                    The app features an explanatory index page and a button to take users to a form. The form page
+                    allows users to provide input on the type of worksheet they want to generate based on:
+                </p>
+                <ul>
+                    <li>Grade level</li>
+                    <li>English ability</li>
+                    <li>Unique vocabulary</li>
+                    <li>Question type</li>
+                </ul>
+                <p>
+                    Once the user completes and submits the form, a call is made to the OpenAI API, passing the form
+                    input as part of a prompt, and a worksheet is generated in a visually pleasing format. The user is
+                    routed to a download page where they may preview their .PDF worksheet and download or print it.
+                </p>
+                <p>
+                    While our team ran into many challenges working on the project together, such as working
+                    collaboratively in Git and working across multiple time zones, I will highlight some of the specific
+                    challenges I faced in my own share of the work:
+                </p>
+                <ul>
+                    <li>
+                        As this hackathon was during my third quarter as a CS student at OSU, I had worked purely in
+                        Python in my coursework up until this point. Learning Flask syntax, templating with Jinja, and
+                        basic HTML and Bootstrap CSS was a lot to take on for a two-day project. It was a lot of time
+                        spent digging through documentation, but it provided a valuable opportunity to learn new skills
+                        and frameworks and actually build something tangible and useful.
+                    </li>
+                    <br>
+                    <li>
+                        The other main challenge I faced was working with my team to figure out how to take the API
+                        response from OpenAI and present it to the user as a .PDF file to be downloaded or printed.
+                        A bit of searching led us to try out a Python library called FPDF which allowed us to set up a
+                        customized .PDF populated with the output from OpenAI.
+                    </li>
+                </ul>
+                <p>
+                    Upon finishing our app, my team and I successfully deployed it on Heroku, where we had it live for
+                    the duration of the hackathon judging, but took it down shortly after, so as not to rack up
+                    expenses. The project was a valuable way to build something as part of a team, learn new
+                    technologies, begin to understand server and router functionality and API's, and deploy a project
+                    for the first time.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn custom" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Modal -->
+        <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="portfolioModalLabel">Personal Portfolio Website</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h5>Flask web application with Bootstrap CSS</h5>
+                <p>
+                    <ul>
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>HTML</li>
+                        <li>Bootstrap CSS</li>
+                        <li>Git, Github</li>
+                        <li>ADD DEPLOYMENT HERE</li>
+                    </ul>
+                </p>
+                <p>
+                    I created this website to serve as a personal portfolio for my professional career as a software
+                    engineer after completing my first year as a CS student at Oregon State University. Up to this
+                    point, my only web development experience was an Intro to Web Dev class focused on the MERN stack.
+                    With this app, I wanted to challenge myself to practice the concepts I learned from that class using
+                    different technologies.
+                </p>
+                <p>
+                    Through creating this project, I am happy to take away a much stronger grasp of creating
+                    applications with Flask and frontend styling with Bootstrap CSS. I had minor experience using
+                    those technologies in a previous hackathon project, and wanted to get my hands dirty with them again
+                    and really understand them better. It was a great exercise in reading documentation and acquiring
+                    new skills in order to create the portfolio website I envisioned.
+                </p>
+                <p>
+                    While I ran into many challenges while working on this project, the two biggest ones were move
+                    validation and evaluating states of the game board to enable proper decision-making by the AI.
+                </p>
+                    <ul>
+                        <li>
+                            Enforcing proper move validation was the biggest hurdle I had to overcome during this build.
+                            In Halma, players may move a piece to any empty adjacent square in any of the eight
+                            directions surrounding their piece. If such a move is made, their turn ends. Players may
+                            also make a jump over any adjacent piece of any color into an empty space on the other side
+                            of that piece. Multiple jumps can be chained together in a single move as long as each jump
+                            is over a different piece and into an unvisited space. The solution came down to building a
+                            list of all valid moves into adjacent spaces with a helper function and adding all valid
+                            jumps to that list using a separate recursive function.
+                        </li>
+                        <br>
+                        <li>
+                            The other main challenge I faced was writing an evaluation function that properly informed
+                            the AI's movements based on the current state of the game board. While I tried out different
+                            factors such as central control of the board, and blocking opposing pieces, I eventually
+                            settled on evaluation based on three factors:
+                            <ol>
+                                <br>
+                                <li>Distance between each player's pieces and the opposing starting zone</li>
+                                <li>Number of pieces in the opponent's starting zone</li>
+                                <li>Penalty for pieces remaining in their own starting zone</li>
+                            </ol>
+                            <br>
+                            The three factors are determined as numeric values and totaled as a floating-point number
+                            representing the evaluation score. The final stage of development for the project as a
+                            whole came down to playing test games against the AI and adjusting the weight of these
+                            three factors to facilitate the strongest decision-making by the AI.
+                        </li>
+                    </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn custom" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Modal -->
+        <div class="modal fade" id="musicModal" tabindex="-1" aria-labelledby="musicModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="musicModalLabel">Music and Mental Health</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h5>Jupyter Notebook Data Analysis: Winter 2023 Hackathon Project</h5>
+                <p>
+                    <ul>
+                          <li>Python</li>
+                          <li>Jupyter Labs</li>
+                          <li>Pandas</li>
+                          <li>Numpy</li>
+                          <li>Seaborn</li>
+                          <li>Matplotlib</li>
+                    </ul>
+                </p>
+                <p>
+                    I worked on this project as part of a team for a Health and Healthcare Hackathon, where we sought to
+                    address mental health and wellness, an increasingly prominent topic in health discussions. My team
+                    aimed to contribute value and problem-solving to the healthcare field by using data analysis to
+                    understand how music connects to mental health. Through our data analysis, we aimed to identify
+                    potential correlations between an individual's music tastes, listening habits, and self-reported
+                    mental health. The goal was to provide valuable insights for professional music therapists, enabling
+                    them to better comprehend the relationship between music and their patients.
+                </p>
+                <p>
+                    We initiated our data analysis process by acquiring a relevant public dataset from Kaggle and
+                    cleaning and analyzing it using Python in Jupyter Labs. Employing various Python libraries such as
+                    Pandas, Numpy, Seaborn, and Matplotlib, we skillfully manipulated the data and crafted insightful
+                    visualizations. Our findings were thoughtfully summarized, providing valuable insights that can
+                    contribute to the field of music therapy.
+                </p>
+                <p>
+                    Participating in a hackathon can be stressful and challenging as you are part of a collaborative
+                    effort to build something in a short time. My team ran into a number of challenges during our
+                    development process:
+                </p>
+                    <ul>
+                      <li>Setting up the coding environment, particularly Git and GitHub, posed several challenges for
+                          our team.</li>
+                      <li>Initial plans to create an interactive dashboard with widgets using Panel faced difficulties,
+                          leading us to focus on static charts created with Matplotlib and Seaborn.</li>
+                      <li>Accessing and isolating specific data from the CSV file for charting was a hurdle.</li>
+                      <li>The dataset's limitations in terms of varied numerical data constrained our data exploration
+                          possibilities. Additional demographic columns and a larger survey pool would have provided
+                          more insights.</li>
+                    </ul>
+                <p>
+                    Overall, I am proud of my team's ability to come together to develop this project on the heels of
+                    finishing our first ever Intro to Computer Science course together at OSU. Jupyter labs was new to
+                    us all, we knew very little about Git and Github, and we had little to no experience using
+                    additional python libraries such as Pandas, Seaborn, and Matplotlib. We achieved working experience
+                    reading through documentation for new technologies and contributing to a collaborative project in a
+                    time sensitive environment.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn custom" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+</div>
+
+{% endblock %}
