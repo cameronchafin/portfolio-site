@@ -9,18 +9,18 @@ import datetime
 
 load_dotenv()
 
-app = Flask(__name__)
+application = Flask(__name__)
 year = datetime.date.today().year
 
 # App & email configuration
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER')
-app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT'))
-app.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS') == 'True'
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+application.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+application.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER')
+application.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT'))
+application.config['MAIL_USE_TLS'] = os.environ.get('MAIL_USE_TLS') == 'True'
+application.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+application.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
-mail = Mail(app)
+mail = Mail(application)
 
 
 class ContactForm(FlaskForm):
@@ -31,22 +31,22 @@ class ContactForm(FlaskForm):
     submit = SubmitField("submit")
 
 
-@app.route("/")
+@application.route("/")
 def index():
     return render_template('index.html', year=year)
 
 
-@app.route("/about")
+@application.route("/about")
 def about():
     return render_template('about.html', year=year)
 
 
-@app.route("/projects")
+@application.route("/projects")
 def projects():
     return render_template('projects.html', year=year)
 
 
-@app.route("/contact", methods=['GET', 'POST'])
+@application.route("/contact", methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
@@ -62,10 +62,10 @@ def contact():
     return render_template('contact.html', form=form, year=year)
 
 
-@app.route("/resume")
+@application.route("/resume")
 def resume():
     return render_template('resume.html', year=year)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
