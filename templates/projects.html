@@ -264,7 +264,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/projects-bg.j
                         <li>HTML</li>
                         <li>Bootstrap CSS</li>
                         <li>Git, Github</li>
-                        <li>ADD DEPLOYMENT HERE</li>
+                        <li>AWS Elastic Beanstalk</li>
                     </ul>
                 </p>
                 <p>
@@ -282,39 +282,30 @@ style="background-image: url({{ url_for('static', filename='img/bg/projects-bg.j
                     new skills in order to create the portfolio website I envisioned.
                 </p>
                 <p>
-                    While I ran into many challenges while working on this project, the two biggest ones were move
-                    validation and evaluating states of the game board to enable proper decision-making by the AI.
+                    While developing this project, I encountered several significant challenges that provided valuable
+                    learning opportunities. The primary focus was on setting up an efficient deployment environment on
+                    AWS Elastic Beanstalk and establishing a seamless CI/CD CodePipeline from GitHub.
                 </p>
-                    <ul>
-                        <li>
-                            Enforcing proper move validation was the biggest hurdle I had to overcome during this build.
-                            In Halma, players may move a piece to any empty adjacent square in any of the eight
-                            directions surrounding their piece. If such a move is made, their turn ends. Players may
-                            also make a jump over any adjacent piece of any color into an empty space on the other side
-                            of that piece. Multiple jumps can be chained together in a single move as long as each jump
-                            is over a different piece and into an unvisited space. The solution came down to building a
-                            list of all valid moves into adjacent spaces with a helper function and adding all valid
-                            jumps to that list using a separate recursive function.
-                        </li>
-                        <br>
-                        <li>
-                            The other main challenge I faced was writing an evaluation function that properly informed
-                            the AI's movements based on the current state of the game board. While I tried out different
-                            factors such as central control of the board, and blocking opposing pieces, I eventually
-                            settled on evaluation based on three factors:
-                            <ol>
-                                <br>
-                                <li>Distance between each player's pieces and the opposing starting zone</li>
-                                <li>Number of pieces in the opponent's starting zone</li>
-                                <li>Penalty for pieces remaining in their own starting zone</li>
-                            </ol>
-                            <br>
-                            The three factors are determined as numeric values and totaled as a floating-point number
-                            representing the evaluation score. The final stage of development for the project as a
-                            whole came down to playing test games against the AI and adjusting the weight of these
-                            three factors to facilitate the strongest decision-making by the AI.
-                        </li>
-                    </ul>
+                <ul>
+                    <li>
+                        One of the main challenges I faced was configuring the deployment environment on AWS Elastic
+                        Beanstalk. This involved creating a new user and role manually, properly configuring
+                        environment properties ensuring the security of sensitive information, and optimizing the
+                        environment's performance to handle the website's traffic effectively.
+                    </li>
+                    <br>
+                    <li>
+                        Additionally, establishing the CI/CD CodePipeline demanded a thorough understanding of
+                        integrating GitHub with AWS CodePipeline. I had to ensure that each code commit triggered
+                        automatic deployments, enabling continuous integration and delivery while maintaining
+                        version control and preventing errors.
+                    </li>
+                </ul>
+                <p>
+                    Overcoming these challenges has not only enabled me to successfully deploy my portfolio website but
+                    also honed my skills in AWS, CI/CD pipelines, and infrastructure management. I am now better
+                    equipped to tackle future projects with confidence and deliver higher quality results.
+                </p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn custom" data-bs-dismiss="modal">Close</button>
