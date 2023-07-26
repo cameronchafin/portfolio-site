@@ -22,19 +22,18 @@ style="background-image: url({{ url_for('static', filename='img/bg/projects-bg.j
 <div class="container my-5">
     <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-2 align-items-center">
 
-        <!-- Halma -->
+        <!-- Portfolio Site -->
         <div class="col mb-4">
             <div class="card h-100">
-                <img src="{{ url_for('static', filename='img/projects/halma.png') }}" class="card-img-top" alt="...">
+                <img src="{{ url_for('static', filename='img/projects/portfolio.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Halma Game</h5>
-                    <p class="card-text">Python implementation of the board game Halma featuring AI implemented with minimax
-                        algorithm and alpha beta pruning.</p>
-                    <!-- Modal trigger button -->
-                    <button type="button" class="btn custom btn-proj" data-bs-toggle="modal" data-bs-target="#halmaModal">
+                    <h5 class="card-title">Portfolio Website</h5>
+                    <p class="card-text">Personal portfolio website built using a Python and Flask backend
+                    and a responsive Bootstrap CSS front end, deployed on AWS.</p>
+                    <button type="button" class="btn custom btn-proj" data-bs-toggle="modal" data-bs-target="#portfolioModal">
                         More Info
                     </button>
-                    <a class="btn custom-outline btn-proj" href="https://github.com/cameronchafin/HalmaGame"
+                    <a class="btn custom-outline btn-proj" href="https://github.com/cameronchafin/portfolio-site"
                        target="_blank">
                         <i class="fas fa-code-branch"></i> GitHub</a>
                 </div>
@@ -59,18 +58,19 @@ style="background-image: url({{ url_for('static', filename='img/bg/projects-bg.j
             </div>
         </div>
 
-        <!-- Portfolio Site -->
+        <!-- Halma -->
         <div class="col mb-4">
             <div class="card h-100">
-                <img src="{{ url_for('static', filename='img/projects/portfolio.png') }}" class="card-img-top" alt="...">
+                <img src="{{ url_for('static', filename='img/projects/halma.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Portfolio Website</h5>
-                    <p class="card-text">Personal portfolio website built using a Python and Flask backend
-                    and a responsive Bootstrap CSS front end, deployed on AWS.</p>
-                    <button type="button" class="btn custom btn-proj" data-bs-toggle="modal" data-bs-target="#portfolioModal">
+                    <h5 class="card-title">Halma Game</h5>
+                    <p class="card-text">Python implementation of the board game Halma featuring AI implemented with minimax
+                        algorithm and alpha beta pruning.</p>
+                    <!-- Modal trigger button -->
+                    <button type="button" class="btn custom btn-proj" data-bs-toggle="modal" data-bs-target="#halmaModal">
                         More Info
                     </button>
-                    <a class="btn custom-outline btn-proj" href="https://github.com/cameronchafin/portfolio-site"
+                    <a class="btn custom-outline btn-proj" href="https://github.com/cameronchafin/HalmaGame"
                        target="_blank">
                         <i class="fas fa-code-branch"></i> GitHub</a>
                 </div>
